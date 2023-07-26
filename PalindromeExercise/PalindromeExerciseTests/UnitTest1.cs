@@ -1,4 +1,5 @@
 using System;
+using PalindromeExercise;
 using Xunit;
 
 namespace PalindromeExerciseTests
@@ -10,15 +11,13 @@ namespace PalindromeExerciseTests
         [InlineData("hannah", true)]
         [InlineData("hector", false)]
 
-        public void IsPalidromeTest(string someWord, bool expected)
+        public static void IsAPalindrome_ShouldReturnCorrectResult(string input, bool expectedResult)
         {
-            //Arrange - prep
-            var instance = new WordSmith();
+            // Arrange & Act
+            bool result = PalidromeChecker.IsAPalindrome(input);
 
-            //Act- call method
-            var actual = instance.IsPalidrome(someWord);
-            //Assert- compare
-            Assert.Equal(expected, actual);
+            // Assert
+            Assert.Equal(expectedResult, result);
         }
 
     }
